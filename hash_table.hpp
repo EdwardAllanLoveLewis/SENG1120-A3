@@ -7,25 +7,29 @@
  */
 
 template <typename T>
-HashTable<T>::HashTable(int table_capacity){
+HashTable<T>::HashTable(int table_capacity)
+{
     capacity = table_capacity;
     count = 0;
 }
 
 template <typename T>
-HashTable<T>::~HashTable(){
-
+HashTable<T>::~HashTable()
+{
+    clear();
 }
 
 template <typename T>
-void HashTable<T>::insert(const T &data){
+void HashTable<T>::insert(const T &data)
+{
     int location = hash_function(data.get_key());
     table[location] = data;
     count++;
 }
 
 template <typename T>
-void HashTable<T>::remove(const std::string &key){
+void HashTable<T>::remove(const std::string &key)
+{
     int location = hash_function(key);
     T result = table[location];
     table[location] = T();
@@ -34,38 +38,55 @@ void HashTable<T>::remove(const std::string &key){
 }
 
 template <typename T>
-T *HashTable<T>::get(const std::string &key){
+T *HashTable<T>::get(const std::string &key)
+{
     int location = hash_function(key);
     return &table[location];
 }
 
 template <typename T>
-bool HashTable<T>::contains(const std::string &key){
-
+bool HashTable<T>::contains(const std::string &key)
+{
+    for (int i = 0; i < capacity; i++)
+    {
+        bool cont = list_contains(table[i], key)
+        {
+            if (cont == true)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 template <typename T>
-void HashTable<T>::clear(){
-
+void HashTable<T>::clear()
+{
+    table.clear();
 }
 
 template <typename T>
-bool HashTable<T>::empty() const{
-    if(size() == 0){
+bool HashTable<T>::empty() const
+{
+    if (size() == 0)
+    {
         return true;
     }
-    else {
+    else
+    {
         return false;
     }
 }
 
 template <typename T>
-int HashTable<T>::size() const{
+int HashTable<T>::size() const
+{
     return count;
 }
 
 template <typename T>
-void HashTable<T>::print(std::ostream &os) const{
+void HashTable<T>::print(std::ostream &os) const
+{
     // Ask about this.
 }
-
