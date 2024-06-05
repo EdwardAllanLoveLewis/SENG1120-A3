@@ -88,11 +88,8 @@ int HashTable<T>::size() const
 template <typename T>
 void HashTable<T>::print(std::ostream &os) const
 {
-    for (int i = 0; i < contains; i++)
+    for (int i = 0; i < capacity; i++)
     {
-        if (table[i] != NULL)
-        {
-            list_print(os, table[i]);
-        }
+        list_print(os, table[i]);
     }
 }
