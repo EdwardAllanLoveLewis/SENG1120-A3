@@ -7,12 +7,10 @@
  * This file should be used in conjunction with Assignment 3 for SENG1120.
  */
 #include "creature_tracker.h"
-CreatureTracker::CreatureTracker()
-{
+CreatureTracker::CreatureTracker(){
 }
 
-CreatureTracker::~CreatureTracker()
-{
+CreatureTracker::~CreatureTracker(){
 }
 
 void CreatureTracker::add_creature(const std::string &name, const std::string &type, int power)
