@@ -117,7 +117,7 @@ BTNode<T> *BSTree<T>::find(const std::string &key, BTNode<T> *node) const
         return find(key, node->get_left());
     if (key > node->get_data().get_key())
         return find(key, node->get_right());
-} // Helper Method
+} // Helper Method Something wrong with this code
 
 template <typename T>
 T &BSTree<T>::find_min() const
